@@ -27,7 +27,7 @@ public class WishListController {
         return wishlistService.getWishlistByUserId(userId);
     }
 
-    //  Used by JS fetch — responds with a 200 OK
+
     @PostMapping("/add")
     public ResponseEntity<String> addMovieToWishlist(@RequestParam UUID userId,
                                                      @RequestParam UUID movieId) throws IOException {
@@ -35,7 +35,7 @@ public class WishListController {
         return ResponseEntity.ok("Movie added to wishlist");
     }
 
-    //  Return status instead of redirect — usable by JS or form
+
     @PostMapping("/remove")
     public ResponseEntity<String> removeMovieFromWishlist(@RequestParam UUID userId,
                                                           @RequestParam UUID movieId) throws IOException {
