@@ -1,0 +1,24 @@
+body {
+    font-family: 'Roboto', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9fafb;
+    color: #4a4a4a;
+    scroll-behavior: smooth; /* Smooth scrolling for links */
+}
+
+/* Main Section */
+main {
+    padding: 40px 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+main .tagline {
+    font-size: 24px;
+    font-weight: bold;
+    color: #1e1e2f;
+    margin-bottom: 40px;
+}
