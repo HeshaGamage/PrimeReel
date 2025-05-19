@@ -15,7 +15,12 @@ public class UserService {
     private final String USERS_FILE = "src/main/resources/data/users.json";
     private final Map<UUID, String> loggedInUsers = new HashMap<>();
 
-
+    private User getUserByUsernameAndPassword(String username, String password) throws IOException {
+        return getAllUsers().stream()
+                .filter(user -> user.getUsername().equalsIgnoreCase(username) && user.getPassword().equals(password))
+                .findFirst()
+                .orElse(null);
+    }
 
     public User getUserByUserName(String username) throws IOException {
         return getAllUsers().stream()
@@ -71,6 +76,9 @@ public class UserService {
         System.out.println("[LOGOUT] Successfully logged out: " + username);
     }
 
+    public boolean isLoggedIn(UUID userId) {
+        return loggedInUsers.containsKey(userId);
+    }
 
     public List<User> getAllUsers() throws IOException {
         File file = new File(USERS_FILE);
